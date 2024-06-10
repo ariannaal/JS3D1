@@ -96,7 +96,7 @@ form.onsubmit = function (event) {
     
     petsArray.push(pet);
     
-    document.getElementById("formPet").reset();
+   document.getElementById("formPet").reset();
 
     const list = document.createElement('li');
     list.textContent = pet.petInfo();
@@ -121,7 +121,28 @@ class Pets {
     petInfo() {
         return `${this.petsName} appartiene a ${this.ownerName}. E' un ${this.species} di razza ${this.breed}`;
     }
+
+    isTheOwnerTheSame(newPet) {
+        if (this.ownerName === newPet.ownerName) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
+
+    
+
+
+
+
+        
+
+
+
+
+
+
 
 
 
