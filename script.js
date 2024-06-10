@@ -3,6 +3,10 @@
 //Aggiungi alla classe User anche un metodo che restituisca il confronto con l'età di un'altra persona. Ad esempio, date due istanze della classe utente “x” e “y” inizializzate con le proprietà sopra descritte, il metodo dovrà restituire una frase simile a “x è più vecchio di y” a seconda del risultato del confronto.
 // Crea degli oggetti a partire dalla classe User e verifica che la comparazione tra le età funzioni correttamente.
 
+
+
+// ESERCIZIO 1
+
 console.log("Esercizio 1");
 
 class User {
@@ -67,6 +71,60 @@ const user3 = new UserStatic("Billie", "Eilish", 22, "California");
 const user4 = new UserStatic("Bruno", "Mars", 38, "Hawaii");
 
 console.log(UserStatic.isTheAgeTheSameStatic(user3, user4));
+
+
+// ESERCIZIO 2
+//Crea un form per la creazione di oggetti “Pet” (animali domestici). La classe Pet dovrà essere dotata delle seguenti proprietà:
+// - petName- ownerName- species // (cane, gatto, coniglio etc.)- breed // (labrador, soriano, nano etc.)
+
+
+
+console.log("Esercizio 2");
+
+const petsArray = [];
+
+const form = document.querySelector("#formPet");
+form.onsubmit = function (event) {
+    event.preventDefault();
+
+    const petName = document.getElementById('petName').value; 
+    const ownerName = document.getElementById('ownerName').value; 
+    const species = document.getElementById('species').value; 
+    const breed = document.getElementById('breed').value; 
+
+    const pet = new Pets(petName, ownerName, species, breed);
+    
+    petsArray.push(pet);
+    
+    document.getElementById("formPet").reset();
+
+    const list = document.createElement('li');
+    list.textContent = pet.petInfo();
+     const listaPet = document.getElementById('listaPet');
+    listaPet.appendChild(list);
+
+    console.log(petsArray);
+    
+};
+
+
+
+
+
+class Pets {
+    constructor(petsName, ownerName, species, breed) {
+        this.petsName = petsName;
+        this.ownerName = ownerName;
+        this.species = species;
+        this.breed = breed;
+    }
+    petInfo() {
+        return `${this.petsName} appartiene a ${this.ownerName}. E' un ${this.species} di razza ${this.breed}`;
+    }
+}
+
+
+
 
 
 

@@ -6,6 +6,31 @@
     <title>JavaScript III Day 1</title>
   </head>
   <body>
+    <h1 style="color: lightskyblue; text-align: center">
+      Il mio animale da compagnia
+    </h1>
+    <form style="text-align: center" id="formPet">
+      <div style="margin-top: 20px">
+        <label for="petName"></label>
+        <input type="text" id="petName" placeholder="Nome dell'animale" />
+      </div>
+      <div style="margin-top: 20px">
+        <label for="ownerName"></label>
+        <input type="text" id="ownerName" placeholder="Nome del proprietario" />
+      </div>
+      <div style="margin-top: 20px">
+        <label for="species"></label>
+        <input type="text" id="species" placeholder="Specie" />
+      </div>
+      <div style="margin-top: 20px">
+        <label for="breed"></label>
+        <input type="text" id="breed" placeholder="Razza" />
+      </div>
+      <button type="submit" style="margin-top: 20px">Invia</button>
+      <div id="listaPet" style="margin-block: 20px; list-style: none">
+        Lista animali
+      </div>
+    </form>
     <script src="./script.js"></script>
   </body>
 </html>
